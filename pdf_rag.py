@@ -14,12 +14,12 @@ Context: {context}
 Answer:
 """
 
-pdfs_directory = 'chat-with-pdf/pdfs/'
+pdfs_directory = 'pdfs/'
 
-embeddings = OllamaEmbeddings(model="deepseek-r1:14b")
+embeddings = OllamaEmbeddings(model="deepseek-r1")
 vector_store = InMemoryVectorStore(embeddings)
 
-model = OllamaLLM(model="deepseek-r1:14b")
+model = OllamaLLM(model="deepseek-r1")
 
 def upload_pdf(file):
     with open(pdfs_directory + file.name, "wb") as f:
